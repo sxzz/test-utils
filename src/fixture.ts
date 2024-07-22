@@ -1,8 +1,8 @@
-import process from 'node:process'
 import path from 'node:path'
+import process from 'node:process'
+import { normalizePath } from '@rollup/pluginutils'
 import glob, { type Options as GlobOptions } from 'fast-glob'
 import { describe, expect, test } from 'vitest'
-import { normalizePath } from '@rollup/pluginutils'
 
 type SkipFn = (testName: string) => boolean | Promise<boolean>
 let isSkip: SkipFn | undefined

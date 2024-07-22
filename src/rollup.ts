@@ -1,10 +1,10 @@
 import {
+  rollup,
   type InputOptions,
   type InputPluginOption,
   type OutputOptions,
   type Plugin,
   type RollupOutput,
-  rollup,
 } from 'rollup'
 
 export async function rollupBuild(

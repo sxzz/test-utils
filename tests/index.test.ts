@@ -1,5 +1,5 @@
-import { describe, expect, test } from 'vitest'
 import { normalizePath } from '@rollup/pluginutils'
+import { describe, expect, test } from 'vitest'
 import { rollupBuild, testFixtures } from '../src'
 
 test('rollupBuild', async () => {
