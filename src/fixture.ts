@@ -4,26 +4,31 @@ import glob, { type Options as GlobOptions } from 'fast-glob'
 import { describe, expect, test } from 'vitest'
 import { normalizePath } from '@rollup/pluginutils'
 
-interface Options {
+type SkipFn = (testName: string) => boolean | Promise<boolean>
+let isSkip: SkipFn | undefined
+export function testFixturesSkip(fn: SkipFn): void {
+  isSkip = fn
+}
+
+export interface FixtureOptions {
   params?: [name: string, values?: any[]][]
   promise?: boolean
-  isSkip?: (testName: string) => boolean | Promise<boolean>
 }
 
 export async function testFixtures(
   globs: string | string[],
   exec: (args: Record<string, any>, id: string) => any,
-  options?: GlobOptions & Options,
+  options?: GlobOptions & FixtureOptions,
 ): Promise<void>
 export async function testFixtures(
   files: Record<string, string>,
   exec: (args: Record<string, any>, id: string, code: string) => any,
-  options?: Options,
+  options?: FixtureOptions,
 ): Promise<void>
 export async function testFixtures(
   globsOrFiles: string | string[] | Record<string, string>,
   cb: (args: Record<string, any>, id: string, code: string) => any,
-  { params, promise, isSkip, ...globOptions }: GlobOptions & Options = {},
+  { params, promise, ...globOptions }: GlobOptions & FixtureOptions = {},
 ) {
   let files: Record<string, string | undefined>
 
@@ -46,7 +51,7 @@ export async function testFixtures(
   function makeTests(
     id: string,
     code: string | undefined,
-    params: NonNullable<Options['params']>,
+    params: NonNullable<FixtureOptions['params']>,
     args: Record<string, any> = {},
   ) {
     const [currParams, ...restParams] = params
