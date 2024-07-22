@@ -1,0 +1,21 @@
+import { describe, expect, test } from 'vitest'
+import { rollupBuild, testFixtures } from '../src'
+
+test('rollupBuild', async () => {
+  const { snapshot } = await rollupBuild('tests/fixtures/main.js')
+  expect(snapshot).toMatchSnapshot()
+})
+
+describe('testFixtures', async () => {
+  await testFixtures(
+    'tests/fixtures/*.js',
+    (args, id) => {
+      expect(args).toEqual({
+        'tests/fixtures/main.js': undefined,
+      })
+      expect(id).contain('tests/fixtures/main.js')
+      return 'ok'
+    },
+    {},
+  )
+})

@@ -1,0 +1,69 @@
+{
+  "name": "@sxzz/test-utils",
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.6.0",
+  "description": "Collection of common test utils for Vitest.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/sxzz/test-utils#readme",
+  "bugs": {
+    "url": "https://github.com/sxzz/test-utils/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxzz/test-utils.git"
+  },
+  "author": "三咲智子 Kevin Deng <sxzz@sxzz.moe>",
+  "funding": "https://github.com/sponsors/sxzz",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm run lint --fix",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --cache --write .",
+    "release": "bumpp && pnpm publish",
+    "prepublishOnly": "pnpm run build"
+  },
+  "peerDependencies": {
+    "vitest": "^2.0.3"
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "^5.1.0",
+    "fast-glob": "^3.3.2",
+    "rollup": "^4.19.0"
+  },
+  "devDependencies": {
+    "@sxzz/eslint-config": "^3.14.0",
+    "@sxzz/prettier-config": "^2.0.2",
+    "@types/node": "^20.14.11",
+    "bumpp": "^9.4.1",
+    "eslint": "^9.7.0",
+    "prettier": "^3.3.3",
+    "tsup": "^8.2.1",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3",
+    "vitest": "^2.0.3"
+  },
+  "engines": {
+    "node": ">=18.12.0"
+  },
+  "prettier": "@sxzz/prettier-config"
+}
