@@ -1,7 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`rollupBuild 1`] = `
-"const foo = 1;
+"// main.js
+const foo = 1;
 
 export { foo };
 "

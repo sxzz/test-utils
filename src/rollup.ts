@@ -40,10 +40,10 @@ export async function rollupBuild(
     snapshot: chunks
       .map((file) =>
         file.type === 'chunk'
-          ? file.code
+          ? `// ${file.fileName}\n${file.code}`
           : typeof file.source === 'string'
-            ? file.source
-            : file.fileName,
+            ? `// ${file.fileName}\n${file.source}`
+            : `// ${file.fileName}\n[BINARY]`,
       )
       .join('\n'),
   }
