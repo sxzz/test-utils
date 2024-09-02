@@ -48,12 +48,12 @@
   "dependencies": {
     "@rollup/pluginutils": "^5.1.0",
     "fast-glob": "^3.3.2",
-    "rollup": "^4.21.1"
+    "rollup": "^4.21.2"
   },
   "devDependencies": {
     "@sxzz/eslint-config": "^3.17.4",
     "@sxzz/prettier-config": "^2.0.2",
-    "@types/node": "^20.16.2",
+    "@types/node": "^20.16.3",
     "bumpp": "^9.5.2",
     "eslint": "^9.9.1",
     "prettier": "^3.3.3",
