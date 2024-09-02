@@ -51,7 +51,7 @@
     "rollup": "^4.21.2"
   },
   "devDependencies": {
-    "@sxzz/eslint-config": "^3.17.4",
+    "@sxzz/eslint-config": "^4.1.4",
     "@sxzz/prettier-config": "^2.0.2",
     "@types/node": "^20.16.3",
     "bumpp": "^9.5.2",
