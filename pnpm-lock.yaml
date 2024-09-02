@@ -19,8 +19,8 @@ importers:
         version: 4.21.2
     devDependencies:
       '@sxzz/eslint-config':
-        specifier: ^4.1.2
-        version: 4.1.3(@typescript-eslint/eslint-plugin@8.3.0(@typescript-eslint/parser@8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
+        specifier: ^4.1.4
+        version: 4.1.4(@typescript-eslint/eslint-plugin@8.3.0(@typescript-eslint/parser@8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       '@sxzz/prettier-config':
         specifier: ^2.0.2
         version: 2.0.2
@@ -539,8 +539,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sxzz/eslint-config@4.1.3':
-    resolution: {integrity: sha512-ZynvdM+wOC+uCM8LXzl2uGQOTZ/WvFcBp+aRmO3/LiwLcDu2YTqjsQ9ZHK4s5erymD0n1rneowgXPdIuYOfHKQ==}
+  '@sxzz/eslint-config@4.1.4':
+    resolution: {integrity: sha512-nJa+gO2Unl7qj+DbY2KHoV7KLwbOgzy9vzzzqZEw++GuuIXKbgzv6MPvyJVblHnZsNnQuX4p2ACjFivOByPjuw==}
     engines: {node: ^18.18.0 || >=20.0.0}
     peerDependencies:
       eslint: ^9.5.0
@@ -2664,7 +2664,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.21.2':
     optional: true
 
-  '@sxzz/eslint-config@4.1.3(@typescript-eslint/eslint-plugin@8.3.0(@typescript-eslint/parser@8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)':
+  '@sxzz/eslint-config@4.1.4(@typescript-eslint/eslint-plugin@8.3.0(@typescript-eslint/parser@8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)':
     dependencies:
       '@eslint/js': 9.9.1
       '@eslint/markdown': 6.0.0(eslint@9.9.1(jiti@1.21.6))

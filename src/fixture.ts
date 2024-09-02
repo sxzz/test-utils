@@ -44,10 +44,6 @@ export async function testFixtures(
     makeTests(id, code, [[normalizePath(id)], ...(params || [])])()
   }
 
-  function getName(name: string, value: any) {
-    return value !== undefined ? `${name} = ${String(value)}` : name
-  }
-
   function makeTests(
     id: string,
     code: string | undefined,
@@ -100,4 +96,8 @@ export async function testFixtures(
       }
     }
   }
+}
+
+function getName(name: string, value: any) {
+  return value !== undefined ? `${name} = ${String(value)}` : name
 }
