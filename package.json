@@ -43,10 +43,14 @@
     "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
-    "rollup": "^4.21.2",
+    "rolldown": "*",
+    "rollup": "^4.1.0",
     "vitest": "^2.0.3"
   },
   "peerDependenciesMeta": {
+    "rolldown": {
+      "optional": true
+    },
     "rollup": {
       "optional": true
     }
@@ -62,6 +66,8 @@
     "bumpp": "^9.5.2",
     "eslint": "^9.9.1",
     "prettier": "^3.3.3",
+    "rolldown": "^0.13.1",
+    "rollup": "^4.21.2",
     "tsup": "^8.2.4",
     "tsx": "^4.19.0",
     "typescript": "^5.5.4",
