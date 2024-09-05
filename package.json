@@ -43,12 +43,17 @@
     "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
+    "rollup": "^4.21.2",
     "vitest": "^2.0.3"
+  },
+  "peerDependenciesMeta": {
+    "rollup": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.1.0",
-    "fast-glob": "^3.3.2",
-    "rollup": "^4.21.2"
+    "fast-glob": "^3.3.2"
   },
   "devDependencies": {
     "@sxzz/eslint-config": "^4.1.4",
