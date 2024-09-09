@@ -1,9 +1,4 @@
-import {
-  rolldown,
-  type InputOptions,
-  type OutputOptions,
-  type RolldownOutput,
-} from 'rolldown'
+import type { InputOptions, OutputOptions, RolldownOutput } from 'rolldown'
 
 type InputPluginOption = NonNullable<InputOptions['plugins']>
 
@@ -16,6 +11,7 @@ export async function rolldownBuild(
   chunks: RolldownOutput['output']
   snapshot: string
 }> {
+  const { rolldown } = await import('rolldown')
   const bundle = await rolldown({
     input: [file],
     treeshake: false,

@@ -1,10 +1,9 @@
-import {
-  rollup,
-  type InputOptions,
-  type InputPluginOption,
-  type OutputOptions,
-  type Plugin,
-  type RollupOutput,
+import type {
+  InputOptions,
+  InputPluginOption,
+  OutputOptions,
+  Plugin,
+  RollupOutput,
 } from 'rollup'
 
 export async function rollupBuild(
@@ -16,6 +15,7 @@ export async function rollupBuild(
   chunks: RollupOutput['output']
   snapshot: string
 }> {
+  const { rollup } = await import('rollup')
   const bundle = await rollup({
     input: [file],
     treeshake: false,
