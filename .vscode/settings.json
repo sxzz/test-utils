@@ -1,4 +1,5 @@
 {
   "editor.formatOnSave": true,
-  "exportall.config.folderListener": ["/src"]
+  "exportall.config.folderListener": ["/src"],
+  "exportall.config.relExclusion": ["/src/internal.ts"]
 }

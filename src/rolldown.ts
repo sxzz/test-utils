@@ -1,3 +1,4 @@
+import { genSnapshot } from './internal'
 import type { InputOptions, OutputOptions, RolldownOutput } from 'rolldown'
 
 type InputPluginOption = NonNullable<InputOptions['plugins']>
@@ -33,14 +34,6 @@ export async function rolldownBuild(
   const chunks = output.output
   return {
     chunks,
-    snapshot: chunks
-      .map((file) =>
-        file.type === 'chunk'
-          ? `// ${file.fileName}\n${file.code}`
-          : typeof file.source === 'string'
-            ? `// ${file.fileName}\n${file.source}`
-            : `// ${file.fileName}\n[BINARY]`,
-      )
-      .join('\n'),
+    snapshot: genSnapshot(chunks),
   }
 }

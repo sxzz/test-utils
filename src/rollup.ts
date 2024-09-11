@@ -1,3 +1,4 @@
+import { genSnapshot } from './internal'
 import type {
   InputOptions,
   InputPluginOption,
@@ -37,15 +38,7 @@ export async function rollupBuild(
   const chunks = output.output
   return {
     chunks,
-    snapshot: chunks
-      .map((file) =>
-        file.type === 'chunk'
-          ? `// ${file.fileName}\n${file.code}`
-          : typeof file.source === 'string'
-            ? `// ${file.fileName}\n${file.source}`
-            : `// ${file.fileName}\n[BINARY]`,
-      )
-      .join('\n'),
+    snapshot: genSnapshot(chunks),
   }
 }
 
