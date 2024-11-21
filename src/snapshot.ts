@@ -28,5 +28,6 @@ export function outputToSnapshot(
       }
       return `// ${filename.replaceAll('\\', '/')}\n${content}`
     })
+    .sort()
     .join('\n')
 }
