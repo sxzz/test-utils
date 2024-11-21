@@ -22,7 +22,7 @@ export function outputToSnapshot(
         content =
           file.type === 'chunk'
             ? file.code
-            : file.source === 'string'
+            : typeof file.source === 'string'
               ? file.source
               : '[BINARY]'
       }
