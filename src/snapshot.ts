@@ -1,7 +1,7 @@
 import type { RolldownOutputAsset, RolldownOutputChunk } from 'rolldown'
 import type { OutputAsset, OutputChunk } from 'rollup'
 
-export function genSnapshot(
+export function outputToSnapshot(
   chunks: (
     | OutputChunk
     | OutputAsset

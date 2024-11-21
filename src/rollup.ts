@@ -1,4 +1,4 @@
-import { genSnapshot } from './internal'
+import { outputToSnapshot } from './snapshot'
 import type {
   InputOptions,
   InputPluginOption,
@@ -38,7 +38,7 @@ export async function rollupBuild(
   const chunks = output.output
   return {
     chunks,
-    snapshot: genSnapshot(chunks),
+    snapshot: outputToSnapshot(chunks),
   }
 }
 

@@ -1,4 +1,4 @@
-import { genSnapshot } from './internal'
+import { outputToSnapshot } from './snapshot'
 import type { InputOptions, OutputOptions, RolldownOutput } from 'rolldown'
 
 type InputPluginOption = NonNullable<InputOptions['plugins']>
@@ -34,6 +34,6 @@ export async function rolldownBuild(
   const chunks = output.output
   return {
     chunks,
-    snapshot: genSnapshot(chunks),
+    snapshot: outputToSnapshot(chunks),
   }
 }
