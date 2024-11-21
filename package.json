@@ -1,6 +1,6 @@
 {
   "name": "@sxzz/test-utils",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "packageManager": "pnpm@9.13.2",
   "description": "Collection of common test utils for Vitest.",
   "type": "module",
