@@ -1,7 +1,7 @@
 {
   "name": "@sxzz/test-utils",
   "version": "0.3.7",
-  "packageManager": "pnpm@9.13.2",
+  "packageManager": "pnpm@9.14.2",
   "description": "Collection of common test utils for Vitest.",
   "type": "module",
   "license": "MIT",
@@ -66,16 +66,16 @@
   "devDependencies": {
     "@sxzz/eslint-config": "^4.4.1",
     "@sxzz/prettier-config": "^2.0.2",
-    "@types/node": "^22.9.0",
+    "@types/node": "^22.9.3",
     "bumpp": "^9.8.1",
     "esbuild": "^0.24.0",
     "eslint": "^9.15.0",
     "prettier": "^3.3.3",
     "rolldown": "^0.14.0",
-    "rollup": "^4.27.2",
+    "rollup": "^4.27.4",
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",
-    "typescript": "^5.6.3",
+    "typescript": "^5.7.2",
     "vitest": "^2.1.5"
   },
   "engines": {
