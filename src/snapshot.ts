@@ -1,3 +1,4 @@
+import process from 'node:process'
 import type { OutputFile } from 'esbuild'
 import type { RolldownOutputAsset, RolldownOutputChunk } from 'rolldown'
 import type { OutputAsset, OutputChunk } from 'rollup'
@@ -26,7 +27,8 @@ export function outputToSnapshot(
               ? file.source
               : '[BINARY]'
       }
-      return `// ${filename.replaceAll('\\', '/')}\n${content}`
+      const cwd = process.cwd()
+      return `// ${filename.replaceAll('\\', '/')}\n${content.replaceAll(cwd, '[CWD]')}`
     })
     .sort()
     .join('\n')
