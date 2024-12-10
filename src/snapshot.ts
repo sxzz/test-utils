@@ -43,7 +43,7 @@ export async function expectFilesSnapshot(
   snapshotFile: string,
   pattern: string = '**/*',
 ): Promise<void> {
-  const outputFiles = await glob(pattern, { cwd: sourceDir })
+  const outputFiles = (await glob(pattern, { cwd: sourceDir })).sort()
   const snapshot = (
     await Promise.all(
       outputFiles.map(async (filename) => {
