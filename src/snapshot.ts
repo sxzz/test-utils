@@ -16,6 +16,7 @@ export function outputToSnapshot(
     | OutputFile
   )[],
 ): string {
+  const cwd = process.cwd()
   return chunks
     .map((file) => {
       let filename: string, content: string
@@ -31,7 +32,6 @@ export function outputToSnapshot(
               ? file.source
               : '[BINARY]'
       }
-      const cwd = process.cwd()
       return `// ${filename.replaceAll('\\', '/')}\n${content.replaceAll(cwd, '[CWD]')}`
     })
     .sort()
@@ -42,19 +42,40 @@ export async function expectFilesSnapshot(
   sourceDir: string,
   snapshotFile: string,
   pattern: string = '**/*',
-): Promise<void> {
-  const outputFiles = (await glob(pattern, { cwd: sourceDir })).sort()
-  const snapshot = (
+): Promise<{
+  files: string[]
+  fileMap: any
+  snapshot: string
+}> {
+  const cwd = process.cwd()
+  const files = (await glob(pattern, { cwd: sourceDir })).sort()
+  const fileMap = Object.fromEntries(
     await Promise.all(
-      outputFiles.map(async (filename) => {
-        const ext = path.extname(filename).slice(1)
-        return `## ${filename.replaceAll('\\', '/')}
+      files.map(
+        async (filename): Promise<[string, string]> => [
+          filename.replaceAll('\\', '/'),
+          (
+            await readFile(path.resolve(sourceDir, filename), 'utf8')
+          ).replaceAll(cwd, '[CWD]'),
+        ],
+      ),
+    ),
+  )
+  const snapshot = Object.entries(fileMap)
+    .map(([filename, contents]) => {
+      const ext = path.extname(filename).slice(1)
+      return `## ${filename}
 
 \`\`\`${ext}
-${await readFile(path.resolve(sourceDir, filename), 'utf8')}
+${contents}
 \`\`\``
-      }),
-    )
-  ).join('\n')
+    })
+    .join('\n')
   await expect(snapshot).toMatchFileSnapshot(snapshotFile)
+
+  return {
+    files,
+    fileMap,
+    snapshot,
+  }
 }
