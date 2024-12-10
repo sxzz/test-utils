@@ -11,9 +11,9 @@ importers:
       '@rollup/pluginutils':
         specifier: ^5.1.3
         version: 5.1.3(rollup@4.28.0)
-      fast-glob:
-        specifier: ^3.3.2
-        version: 3.3.2
+      tinyglobby:
+        specifier: ^0.2.10
+        version: 0.2.10
     devDependencies:
       '@sxzz/eslint-config':
         specifier: ^4.5.1
