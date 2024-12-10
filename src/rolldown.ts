@@ -24,7 +24,7 @@ export async function rolldownBuild(
       defaultHandler(warning)
     },
     ...inputOptions,
-    plugins: [...plugins, ...(inputOptions.plugins || [])],
+    plugins: [plugins, inputOptions.plugins],
   })
   const output = await bundle.generate({
     format: 'esm',
