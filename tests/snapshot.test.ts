@@ -1,6 +1,7 @@
+import path from 'node:path'
 import process from 'node:process'
 import { expect, test } from 'vitest'
-import { outputToSnapshot } from '../src'
+import { expectFilesSnapshot, outputToSnapshot } from '../src'
 
 test('outputToSnapshot', () => {
   const result = outputToSnapshot([
@@ -11,4 +12,11 @@ test('outputToSnapshot', () => {
     } as any,
   ])
   expect(result).contain('[CWD]')
+})
+
+test('expectFilesSnapshot', async () => {
+  await expectFilesSnapshot(
+    path.resolve(__dirname, 'fixtures'),
+    path.resolve(__dirname, '__snapshots__/expectFilesSnapshot.md'),
+  )
 })
