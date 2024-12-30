@@ -1,7 +1,7 @@
 {
   "name": "@sxzz/test-utils",
   "version": "0.3.11",
-  "packageManager": "pnpm@9.15.1",
+  "packageManager": "pnpm@9.15.2",
   "description": "Collection of common test utils for Vitest.",
   "type": "module",
   "license": "MIT",
