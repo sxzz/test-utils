@@ -46,7 +46,7 @@
     "esbuild": ">=0.20.0",
     "rolldown": "*",
     "rollup": "^4.1.0",
-    "vitest": "^2.0.3"
+    "vitest": "^2.0.0 || ^3.0.0-0"
   },
   "peerDependenciesMeta": {
     "esbuild": {
