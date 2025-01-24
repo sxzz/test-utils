@@ -2,7 +2,12 @@ import path from 'node:path'
 import process from 'node:process'
 import { normalizePath } from '@rollup/pluginutils'
 import { glob, type GlobOptions } from 'tinyglobby'
-import { describe, expect, test } from 'vitest'
+import {
+  describe,
+  expect as globalExpect,
+  test,
+  type ExpectStatic,
+} from 'vitest'
 
 type SkipFn = (testName: string) => boolean | Promise<boolean>
 let isSkip: SkipFn | undefined
@@ -13,6 +18,7 @@ export function testFixturesSkip(fn: SkipFn): void {
 export interface FixtureOptions {
   params?: [name: string, values?: any[]][]
   promise?: boolean
+  expect?: ExpectStatic
 }
 
 export async function testFixtures(
@@ -28,7 +34,12 @@ export async function testFixtures(
 export async function testFixtures(
   globsOrFiles: string | string[] | Record<string, string>,
   cb: (args: Record<string, any>, id: string, code: string) => any,
-  { params, promise, ...globOptions }: GlobOptions & FixtureOptions = {},
+  {
+    params,
+    promise,
+    expect = globalExpect,
+    ...globOptions
+  }: GlobOptions & FixtureOptions = {},
 ) {
   let files: Record<string, string | undefined>
 

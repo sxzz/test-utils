@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 import { glob } from 'tinyglobby'
-import { expect } from 'vitest'
+import { expect as globalExpect, type ExpectStatic } from 'vitest'
 import type { OutputFile } from 'esbuild'
 import type { RolldownOutputAsset, RolldownOutputChunk } from 'rolldown'
 import type { OutputAsset, OutputChunk } from 'rollup'
@@ -41,7 +41,10 @@ export function outputToSnapshot(
 export async function expectFilesSnapshot(
   sourceDir: string,
   snapshotFile: string,
-  pattern: string = '**/*',
+  {
+    pattern = '**/*',
+    expect = globalExpect,
+  }: { pattern?: string; expect?: ExpectStatic } = {},
 ): Promise<{
   files: string[]
   fileMap: any
