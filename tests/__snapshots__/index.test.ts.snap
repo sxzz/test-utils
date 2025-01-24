@@ -8,4 +8,6 @@ export { foo };
 "
 `;
 
+exports[`testFixtures > tests/fixtures/bar.js 1`] = `"ok"`;
+
 exports[`testFixtures > tests/fixtures/main.js 1`] = `"ok"`;

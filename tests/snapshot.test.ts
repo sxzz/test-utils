@@ -3,7 +3,7 @@ import process from 'node:process'
 import { expect, test } from 'vitest'
 import { expectFilesSnapshot, outputToSnapshot } from '../src'
 
-test('outputToSnapshot', () => {
+test.concurrent('outputToSnapshot', () => {
   const result = outputToSnapshot([
     {
       type: 'chunk',
@@ -14,9 +14,10 @@ test('outputToSnapshot', () => {
   expect(result).contain('[CWD]')
 })
 
-test('expectFilesSnapshot', async () => {
+test.concurrent('expectFilesSnapshot', async ({ expect }) => {
   await expectFilesSnapshot(
     path.resolve(__dirname, 'fixtures'),
     path.resolve(__dirname, '__snapshots__/expectFilesSnapshot.md'),
+    { expect },
   )
 })

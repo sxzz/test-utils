@@ -2,12 +2,7 @@ import path from 'node:path'
 import process from 'node:process'
 import { normalizePath } from '@rollup/pluginutils'
 import { glob, type GlobOptions } from 'tinyglobby'
-import {
-  describe,
-  expect as globalExpect,
-  test,
-  type ExpectStatic,
-} from 'vitest'
+import { describe, test } from 'vitest'
 
 type SkipFn = (testName: string) => boolean | Promise<boolean>
 let isSkip: SkipFn | undefined
@@ -18,7 +13,7 @@ export function testFixturesSkip(fn: SkipFn): void {
 export interface FixtureOptions {
   params?: [name: string, values?: any[]][]
   promise?: boolean
-  expect?: ExpectStatic
+  concurrent?: boolean
 }
 
 export async function testFixtures(
@@ -37,7 +32,7 @@ export async function testFixtures(
   {
     params,
     promise,
-    expect = globalExpect,
+    concurrent,
     ...globOptions
   }: GlobOptions & FixtureOptions = {},
 ) {
@@ -78,7 +73,11 @@ export async function testFixtures(
       return () => {
         for (const value of values) {
           const testName = getName(name, value)
-          test.skipIf(isSkip?.(testName))(testName, async () => {
+          let testFn = test.skipIf(isSkip?.(testName))
+          if (concurrent) {
+            testFn = testFn.concurrent
+          }
+          testFn(testName, async ({ expect }) => {
             const currArgs = { ...args, [name]: value }
             const execute = () =>
               cb(
