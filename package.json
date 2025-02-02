@@ -1,6 +1,6 @@
 {
   "name": "@sxzz/test-utils",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "packageManager": "pnpm@9.15.5",
   "description": "Collection of common test utils.",
   "type": "module",
