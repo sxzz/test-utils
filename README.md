@@ -20,4 +20,4 @@ npm i @sxzz/test-utils
 
 ## License
 
-[MIT](./LICENSE) License © 2024 [三咲智子 Kevin Deng](https://github.com/sxzz)
+[MIT](./LICENSE) License © 2024-PRESENT [三咲智子 Kevin Deng](https://github.com/sxzz)
