@@ -4,7 +4,7 @@ import process from 'node:process'
 import { glob } from 'tinyglobby'
 import { expect as globalExpect, type ExpectStatic } from 'vitest'
 import type { OutputFile } from 'esbuild'
-import type { RolldownOutputAsset, RolldownOutputChunk } from 'rolldown'
+import type { OutputAsset as RolldownOutputAsset, OutputChunk as RolldownOutputChunk } from 'rolldown'
 import type { OutputAsset, OutputChunk } from 'rollup'
 
 export function outputToSnapshot(
