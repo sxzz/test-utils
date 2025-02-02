@@ -2,6 +2,8 @@
 
 [![Unit Test](https://github.com/sxzz/test-utils/actions/workflows/unit-test.yml/badge.svg)](https://github.com/sxzz/test-utils/actions/workflows/unit-test.yml)
 
+Collection of common test utils.
+
 ## Install
 
 ```bash
