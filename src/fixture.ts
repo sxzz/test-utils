@@ -1,7 +1,7 @@
 import path from 'node:path'
 import process from 'node:process'
-import { normalizePath } from '@rollup/pluginutils'
 import { glob, type GlobOptions } from 'tinyglobby'
+import { normalizePath } from 'unplugin-utils'
 import { describe, test } from 'vitest'
 
 type SkipFn = (testName: string) => boolean | Promise<boolean>
