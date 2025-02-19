@@ -4,6 +4,9 @@
 
 Collection of common test utils.
 
+- Tree-shakable ESM
+- Lightweight and fast
+
 ## Install
 
 ```bash

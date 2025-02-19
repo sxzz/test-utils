@@ -1,11 +1,14 @@
 import { outputToSnapshot } from './snapshot'
-import type { InputOptions, OutputOptions, RolldownOutput } from 'rolldown'
-
-type InputPluginOption = NonNullable<InputOptions['plugins']>
+import type {
+  InputOptions,
+  OutputOptions,
+  RolldownOutput,
+  RolldownPluginOption,
+} from 'rolldown'
 
 export async function rolldownBuild(
   file: string,
-  plugins: InputPluginOption = [],
+  plugins: RolldownPluginOption = [],
   inputOptions: InputOptions = {},
   outputOptions: OutputOptions = {},
 ): Promise<{
