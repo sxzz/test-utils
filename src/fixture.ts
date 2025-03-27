@@ -14,6 +14,7 @@ export interface FixtureOptions {
   params?: [name: string, values?: any[]][]
   promise?: boolean
   concurrent?: boolean
+  snapshot?: boolean
 }
 
 export async function testFixtures(
@@ -33,6 +34,7 @@ export async function testFixtures(
     params,
     promise,
     concurrent,
+    snapshot = true,
     ...globOptions
   }: GlobOptions & FixtureOptions = {},
 ) {
@@ -69,22 +71,25 @@ export async function testFixtures(
           )
         }
       }
-    } else {
-      return () => {
-        for (const value of values) {
-          const testName = getName(name, value)
-          let testFn = test.skipIf(isSkip?.(testName))
-          if (concurrent) {
-            testFn = testFn.concurrent
-          }
-          testFn(testName, async ({ expect }) => {
-            const currArgs = { ...args, [name]: value }
-            const execute = () =>
-              cb(
-                currArgs,
-                path.resolve(globOptions.cwd || process.cwd(), id),
-                code!,
-              )
+    }
+
+    return () => {
+      for (const value of values) {
+        const testName = getName(name, value)
+        let testFn = test.skipIf(isSkip?.(testName))
+        if (concurrent) {
+          testFn = testFn.concurrent
+        }
+        testFn(testName, async ({ expect }) => {
+          const currArgs = { ...args, [name]: value }
+          const execute = () =>
+            cb(
+              currArgs,
+              path.resolve(globOptions.cwd || process.cwd(), id),
+              code!,
+            )
+
+          if (snapshot) {
             if (id.includes('error')) {
               if (promise) {
                 await expect(execute()).rejects.toThrowErrorMatchingSnapshot()
@@ -101,8 +106,10 @@ export async function testFixtures(
             } else {
               expect(execute()).toMatchSnapshot()
             }
-          })
-        }
+          } else {
+            await execute()
+          }
+        })
       }
     }
   }
