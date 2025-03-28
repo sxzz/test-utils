@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 import { glob } from 'tinyglobby'
-import { expect as globalExpect, type ExpectStatic } from 'vitest'
+import { type ExpectStatic } from 'vitest'
 import type { OutputFile } from 'esbuild'
 import type {
   OutputAsset as RolldownOutputAsset,
@@ -46,13 +46,17 @@ export async function expectFilesSnapshot(
   snapshotFile: string,
   {
     pattern = '**/*',
-    expect = globalExpect,
+    expect,
   }: { pattern?: string; expect?: ExpectStatic } = {},
 ): Promise<{
   files: string[]
   fileMap: any
   snapshot: string
 }> {
+  if (!expect) {
+    expect = await import('vitest').then((m) => m.expect)
+  }
+
   const cwd = process.cwd()
   const files = (await glob(pattern, { cwd: sourceDir })).sort()
   const fileMap = Object.fromEntries(
@@ -77,7 +81,7 @@ ${contents}
 \`\`\``
     })
     .join('\n')
-  await expect(snapshot).toMatchFileSnapshot(snapshotFile)
+  await expect!(snapshot).toMatchFileSnapshot(snapshotFile)
 
   return {
     files,

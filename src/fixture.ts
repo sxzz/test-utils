@@ -2,7 +2,6 @@ import path from 'node:path'
 import process from 'node:process'
 import { glob, type GlobOptions } from 'tinyglobby'
 import { normalizePath } from 'unplugin-utils'
-import { describe, test } from 'vitest'
 
 type SkipFn = (testName: string) => boolean | Promise<boolean>
 let isSkip: SkipFn | undefined
@@ -38,6 +37,8 @@ export async function testFixtures(
     ...globOptions
   }: GlobOptions & FixtureOptions = {},
 ) {
+  const { describe, test } = await import('vitest')
+
   let files: Record<string, string | undefined>
 
   if (typeof globsOrFiles === 'string' || Array.isArray(globsOrFiles)) {
