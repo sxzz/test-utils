@@ -2,13 +2,13 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 import { glob } from 'tinyglobby'
-import { type ExpectStatic } from 'vitest'
 import type { OutputFile } from 'esbuild'
 import type {
   OutputAsset as RolldownOutputAsset,
   OutputChunk as RolldownOutputChunk,
 } from 'rolldown'
 import type { OutputAsset, OutputChunk } from 'rollup'
+import type { ExpectStatic } from 'vitest'
 
 export function outputToSnapshot(
   chunks: (
