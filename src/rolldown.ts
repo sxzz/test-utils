@@ -7,7 +7,7 @@ import type {
 } from 'rolldown'
 
 export async function rolldownBuild(
-  file: string,
+  file: string | string[],
   plugins: RolldownPluginOption = [],
   inputOptions: InputOptions = {},
   outputOptions: OutputOptions = {},
@@ -17,7 +17,7 @@ export async function rolldownBuild(
 }> {
   const { rolldown } = await import('rolldown')
   const bundle = await rolldown({
-    input: [file],
+    input: Array.isArray(file) ? file : [file],
     treeshake: false,
     onwarn(warning, defaultHandler) {
       if (

@@ -8,7 +8,7 @@ import type {
 } from 'rollup'
 
 export async function rollupBuild(
-  file: string,
+  file: string | string[],
   plugins: InputPluginOption = [],
   inputOptions: InputOptions = {},
   outputOptions: OutputOptions = {},
@@ -18,7 +18,7 @@ export async function rollupBuild(
 }> {
   const { rollup } = await import('rollup')
   const bundle = await rollup({
-    input: [file],
+    input: Array.isArray(file) ? file : [file],
     treeshake: false,
     onwarn(warning, defaultHandler) {
       if (

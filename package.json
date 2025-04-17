@@ -1,7 +1,7 @@
 {
   "name": "@sxzz/test-utils",
   "version": "0.5.4",
-  "packageManager": "pnpm@10.8.0",
+  "packageManager": "pnpm@10.8.1",
   "description": "Collection of common test utils.",
   "type": "module",
   "license": "MIT",
@@ -70,7 +70,7 @@
     "prettier": "^3.5.3",
     "rolldown": "^1.0.0-beta.7",
     "rollup": "^4.40.0",
-    "tsdown": "^0.6.10",
+    "tsdown": "^0.8.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",
     "vitest": "^3.1.1"
