@@ -1,4 +1,5 @@
 export * from './fixture'
+export * from './path'
 export * from './rolldown'
 export * from './rollup'
 export * from './snapshot'

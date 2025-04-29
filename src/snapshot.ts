@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 import { glob } from 'tinyglobby'
+import { normalizePath, replacePath } from './path'
 import type { OutputFile } from 'esbuild'
 import type {
   OutputAsset as RolldownOutputAsset,
@@ -9,16 +10,6 @@ import type {
 } from 'rolldown'
 import type { OutputAsset, OutputChunk } from 'rollup'
 import type { ExpectStatic } from 'vitest'
-
-function normalizePath(path: string) {
-  return path.replaceAll('\\', '/')
-}
-
-function replacePath(source: string, search: string, replacement: string) {
-  return source
-    .replaceAll(search, replacement)
-    .replaceAll(normalizePath(search), replacement)
-}
 
 export function outputToSnapshot(
   chunks: (
