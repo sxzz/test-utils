@@ -10,6 +10,16 @@ import type {
 import type { OutputAsset, OutputChunk } from 'rollup'
 import type { ExpectStatic } from 'vitest'
 
+function normalizePath(path: string) {
+  return path.replaceAll('\\', '/')
+}
+
+function replacePath(source: string, search: string, replacement: string) {
+  return source
+    .replaceAll(search, replacement)
+    .replaceAll(normalizePath(search), replacement)
+}
+
 export function outputToSnapshot(
   chunks: (
     | OutputChunk
@@ -35,7 +45,7 @@ export function outputToSnapshot(
               ? file.source
               : '[BINARY]'
       }
-      return `// ${filename.replaceAll('\\', '/')}\n${content.replaceAll(cwd, '[CWD]')}`
+      return `// ${normalizePath(filename)}\n${replacePath(content, cwd, '[CWD]')}`
     })
     .sort()
     .join('\n')
@@ -63,10 +73,12 @@ export async function expectFilesSnapshot(
     await Promise.all(
       files.map(
         async (filename): Promise<[string, string]> => [
-          filename.replaceAll('\\', '/'),
-          (
-            await readFile(path.resolve(sourceDir, filename), 'utf8')
-          ).replaceAll(cwd, '[CWD]'),
+          normalizePath(filename),
+          replacePath(
+            await readFile(path.resolve(sourceDir, filename), 'utf8'),
+            cwd,
+            '[CWD]',
+          ),
         ],
       ),
     ),
