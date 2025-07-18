@@ -51,7 +51,7 @@ export async function expectFilesSnapshot(
   }: { pattern?: string; expect?: ExpectStatic } = {},
 ): Promise<{
   files: string[]
-  fileMap: any
+  fileMap: Record<string, string>
   snapshot: string
 }> {
   if (!expect) {
