@@ -40,12 +40,21 @@
     "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
+    "@ts-macro/language-plugin": "*",
+    "@volar/typescript": "*",
     "esbuild": ">=0.20.0",
     "rolldown": "*",
     "rollup": "^4.1.0",
+    "typescript": "^5.8.0",
     "vitest": "^2.0.0 || ^3.0.0-0"
   },
   "peerDependenciesMeta": {
+    "@ts-macro/language-plugin": {
+      "optional": true
+    },
+    "@volar/typescript": {
+      "optional": true
+    },
     "esbuild": {
       "optional": true
     },
@@ -53,6 +62,9 @@
       "optional": true
     },
     "rollup": {
+      "optional": true
+    },
+    "typescript": {
       "optional": true
     }
   },
@@ -63,13 +75,16 @@
   "devDependencies": {
     "@sxzz/eslint-config": "^7.0.6",
     "@sxzz/prettier-config": "^2.2.3",
+    "@ts-macro/language-plugin": "^0.3.1",
     "@types/node": "^24.0.15",
+    "@volar/typescript": "^2.4.22",
     "bumpp": "^10.2.0",
     "esbuild": "^0.25.8",
     "eslint": "^9.31.0",
     "prettier": "^3.6.2",
     "rolldown": "^1.0.0-beta.28",
     "rollup": "^4.45.1",
+    "ts-macro": "^0.3.1",
     "tsdown": "^0.12.9",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
