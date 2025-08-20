@@ -1,6 +1,8 @@
-# @sxzz/test-utils [![npm](https://img.shields.io/npm/v/@sxzz/test-utils.svg)](https://npmjs.com/package/@sxzz/test-utils)
+# @sxzz/test-utils
 
-[![Unit Test](https://github.com/sxzz/test-utils/actions/workflows/unit-test.yml/badge.svg)](https://github.com/sxzz/test-utils/actions/workflows/unit-test.yml)
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Unit Test][unit-test-src]][unit-test-href]
 
 Collection of common test utils.
 
@@ -24,3 +26,12 @@ npm i @sxzz/test-utils
 ## License
 
 [MIT](./LICENSE) License © 2024-PRESENT [三咲智子 Kevin Deng](https://github.com/sxzz)
+
+<!-- Badges -->
+
+[npm-version-src]: https://img.shields.io/npm/v/@sxzz/test-utils.svg
+[npm-version-href]: https://npmjs.com/package/@sxzz/test-utils
+[npm-downloads-src]: https://img.shields.io/npm/dm/@sxzz/test-utils
+[npm-downloads-href]: https://www.npmcharts.com/compare/@sxzz/test-utils?interval=30
+[unit-test-src]: https://github.com/sxzz/test-utils/actions/workflows/unit-test.yml/badge.svg
+[unit-test-href]: https://github.com/sxzz/test-utils/actions/workflows/unit-test.yml

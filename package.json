@@ -1,7 +1,7 @@
 {
   "name": "@sxzz/test-utils",
   "version": "0.5.9",
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.15.0",
   "description": "Collection of common test utils.",
   "type": "module",
   "license": "MIT",
@@ -73,7 +73,7 @@
     "unplugin-utils": "^0.2.5"
   },
   "devDependencies": {
-    "@sxzz/eslint-config": "^7.1.3",
+    "@sxzz/eslint-config": "^7.1.4",
     "@sxzz/prettier-config": "^2.2.4",
     "@ts-macro/language-plugin": "^0.3.4",
     "@types/node": "^24.3.0",
