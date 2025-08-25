@@ -70,7 +70,7 @@
   },
   "dependencies": {
     "tinyglobby": "^0.2.14",
-    "unplugin-utils": "^0.2.5"
+    "unplugin-utils": "^0.3.0"
   },
   "devDependencies": {
     "@sxzz/eslint-config": "^7.1.4",
@@ -80,13 +80,13 @@
     "@volar/typescript": "^2.4.23",
     "bumpp": "^10.2.3",
     "esbuild": "^0.25.9",
-    "eslint": "^9.33.0",
+    "eslint": "^9.34.0",
     "prettier": "^3.6.2",
     "rolldown": "^1.0.0-beta.33",
-    "rollup": "^4.46.3",
+    "rollup": "^4.48.0",
     "ts-macro": "^0.3.4",
     "tsdown": "^0.14.1",
-    "tsx": "^4.20.4",
+    "tsx": "^4.20.5",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   },
