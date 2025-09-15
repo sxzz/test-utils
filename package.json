@@ -1,7 +1,7 @@
 {
   "name": "@sxzz/test-utils",
   "version": "0.5.10",
-  "packageManager": "pnpm@10.15.0",
+  "packageManager": "pnpm@10.16.1",
   "description": "Collection of common test utils.",
   "type": "module",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/sxzz/test-utils.git"
   },
-  "author": "三咲智子 Kevin Deng <sxzz@sxzz.moe>",
+  "author": "Kevin Deng <sxzz@sxzz.moe>",
   "funding": "https://github.com/sponsors/sxzz",
   "files": [
     "dist"
@@ -69,23 +69,23 @@
     }
   },
   "dependencies": {
-    "tinyglobby": "^0.2.14",
+    "tinyglobby": "^0.2.15",
     "unplugin-utils": "^0.3.0"
   },
   "devDependencies": {
     "@sxzz/eslint-config": "^7.1.4",
     "@sxzz/prettier-config": "^2.2.4",
-    "@ts-macro/language-plugin": "^0.3.4",
-    "@types/node": "^24.3.0",
+    "@ts-macro/language-plugin": "^0.3.6",
+    "@types/node": "^24.4.0",
     "@volar/typescript": "^2.4.23",
     "bumpp": "^10.2.3",
     "esbuild": "^0.25.9",
-    "eslint": "^9.34.0",
+    "eslint": "^9.35.0",
     "prettier": "^3.6.2",
-    "rolldown": "^1.0.0-beta.33",
-    "rollup": "^4.48.0",
-    "ts-macro": "^0.3.4",
-    "tsdown": "^0.14.1",
+    "rolldown": "^1.0.0-beta.37",
+    "rollup": "^4.50.2",
+    "ts-macro": "^0.3.6",
+    "tsdown": "^0.15.1",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
