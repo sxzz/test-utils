@@ -81,7 +81,8 @@ export async function expectFilesSnapshot(
 
 \`\`\`${ext}
 ${contents}
-\`\`\``
+\`\`\`
+`
     })
     .join('\n')
   await expect!(snapshot).toMatchFileSnapshot(snapshotFile)
