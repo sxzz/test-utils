@@ -1,6 +1,6 @@
 import path from 'node:path'
 import process from 'node:process'
-import { glob, type GlobOptions } from 'tinyglobby'
+import { glob, type GlobOptions as _GlobOptions } from 'tinyglobby'
 import { normalizePath } from 'unplugin-utils'
 
 type SkipFn = (testName: string) => boolean | Promise<boolean>
@@ -15,6 +15,8 @@ export interface FixtureOptions {
   concurrent?: boolean
   snapshot?: boolean
 }
+
+export type GlobOptions = _GlobOptions & { cwd?: string }
 
 export async function testFixtures(
   globs: string | string[],
