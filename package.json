@@ -1,7 +1,7 @@
 {
   "name": "@sxzz/test-utils",
   "version": "0.5.11",
-  "packageManager": "pnpm@10.16.1",
+  "packageManager": "pnpm@10.19.0",
   "description": "Collection of common test utils.",
   "type": "module",
   "license": "MIT",
@@ -46,7 +46,7 @@
     "rolldown": "*",
     "rollup": "^4.1.0",
     "typescript": "^5.8.0",
-    "vitest": "^2.0.0 || ^3.0.0-0"
+    "vitest": "^2.0.0 || ^3.0.0 || ^4.0.0"
   },
   "peerDependenciesMeta": {
     "@ts-macro/language-plugin": {
@@ -70,28 +70,27 @@
   },
   "dependencies": {
     "tinyglobby": "^0.2.15",
-    "unplugin-utils": "^0.3.0"
+    "unplugin-utils": "^0.3.1"
   },
   "devDependencies": {
-    "@sxzz/eslint-config": "^7.1.4",
+    "@sxzz/eslint-config": "^7.2.7",
     "@sxzz/prettier-config": "^2.2.4",
     "@ts-macro/language-plugin": "^0.3.6",
-    "@types/node": "^24.4.0",
+    "@types/node": "^24.9.1",
     "@volar/typescript": "^2.4.23",
-    "bumpp": "^10.2.3",
-    "esbuild": "^0.25.9",
-    "eslint": "^9.35.0",
+    "bumpp": "^10.3.1",
+    "esbuild": "^0.25.11",
+    "eslint": "^9.38.0",
     "prettier": "^3.6.2",
-    "rolldown": "^1.0.0-beta.37",
-    "rollup": "^4.50.2",
+    "rolldown": "^1.0.0-beta.44",
+    "rollup": "^4.52.5",
     "ts-macro": "^0.3.6",
-    "tsdown": "^0.15.1",
-    "tsx": "^4.20.5",
-    "typescript": "^5.9.2",
-    "vitest": "^3.2.4"
+    "tsdown": "^0.15.9",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.1"
   },
   "engines": {
-    "node": ">=20.18.0"
+    "node": ">=20.19.0"
   },
   "prettier": "@sxzz/prettier-config"
 }
