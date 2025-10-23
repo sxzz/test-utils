@@ -38,7 +38,7 @@ export function outputToSnapshot(
       }
       return `// ${normalizePath(filename)}\n${replacePath(content, cwd, '[CWD]')}`
     })
-    .sort()
+    .toSorted()
     .join('\n')
 }
 
@@ -59,7 +59,7 @@ export async function expectFilesSnapshot(
   }
 
   const cwd = process.cwd()
-  const files = (await glob(pattern, { cwd: sourceDir })).sort()
+  const files = (await glob(pattern, { cwd: sourceDir })).toSorted()
   const fileMap = Object.fromEntries(
     await Promise.all(
       files.map(

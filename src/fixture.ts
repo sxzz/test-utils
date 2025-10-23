@@ -103,7 +103,7 @@ export async function testFixtures(
               await expect(
                 (execute() as Promise<any>).catch((error) => {
                   console.warn(error)
-                  return Promise.reject(error)
+                  throw error
                 }),
               ).resolves.toMatchSnapshot()
             } else {
@@ -119,5 +119,5 @@ export async function testFixtures(
 }
 
 function getName(name: string, value: any) {
-  return value !== undefined ? `${name} = ${String(value)}` : name
+  return value === undefined ? name : `${name} = ${String(value)}`
 }
