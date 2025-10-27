@@ -82,12 +82,12 @@
     "esbuild": "^0.25.11",
     "eslint": "^9.38.0",
     "prettier": "^3.6.2",
-    "rolldown": "^1.0.0-beta.44",
+    "rolldown": "^1.0.0-beta.45",
     "rollup": "^4.52.5",
     "ts-macro": "^0.3.6",
-    "tsdown": "^0.15.9",
+    "tsdown": "^0.15.10",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.1"
+    "vitest": "^4.0.4"
   },
   "engines": {
     "node": ">=20.19.0"
