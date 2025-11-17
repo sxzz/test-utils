@@ -1,7 +1,7 @@
 {
   "name": "@sxzz/test-utils",
   "version": "0.5.12",
-  "packageManager": "pnpm@10.21.0",
+  "packageManager": "pnpm@10.22.0",
   "description": "Collection of common test utils.",
   "type": "module",
   "license": "MIT",
@@ -73,21 +73,21 @@
     "unplugin-utils": "^0.3.1"
   },
   "devDependencies": {
-    "@sxzz/eslint-config": "^7.2.8",
+    "@sxzz/eslint-config": "^7.2.10",
     "@sxzz/prettier-config": "^2.2.4",
     "@ts-macro/language-plugin": "^0.3.6",
-    "@types/node": "^24.10.0",
+    "@types/node": "^24.10.1",
     "@volar/typescript": "^2.4.23",
     "bumpp": "^10.3.1",
     "esbuild": "^0.27.0",
     "eslint": "^9.39.1",
     "prettier": "^3.6.2",
-    "rolldown": "^1.0.0-beta.47",
-    "rollup": "^4.53.1",
+    "rolldown": "^1.0.0-beta.50",
+    "rollup": "^4.53.2",
     "ts-macro": "^0.3.6",
-    "tsdown": "^0.16.1",
+    "tsdown": "^0.16.5",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.8"
+    "vitest": "^4.0.9"
   },
   "engines": {
     "node": ">=20.19.0"
