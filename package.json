@@ -18,11 +18,11 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "exports": {
-    ".": "./dist/index.js",
+    ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
   "publishConfig": {
@@ -42,6 +42,7 @@
   "peerDependencies": {
     "@ts-macro/language-plugin": "*",
     "@volar/typescript": "*",
+    "@vue/language-core": "^3.1.0",
     "esbuild": ">=0.20.0",
     "rolldown": "*",
     "rollup": "^4.1.0",
@@ -53,6 +54,9 @@
       "optional": true
     },
     "@volar/typescript": {
+      "optional": true
+    },
+    "@vue/language-core": {
       "optional": true
     },
     "esbuild": {
@@ -78,6 +82,7 @@
     "@ts-macro/language-plugin": "^0.3.6",
     "@types/node": "^24.10.1",
     "@volar/typescript": "^2.4.23",
+    "@vue/language-core": "^3.1.4",
     "bumpp": "^10.3.1",
     "esbuild": "^0.27.0",
     "eslint": "^9.39.1",
@@ -92,5 +97,8 @@
   "engines": {
     "node": ">=20.19.0"
   },
-  "prettier": "@sxzz/prettier-config"
+  "prettier": "@sxzz/prettier-config",
+  "tsdown": {
+    "exports": true
+  }
 }
