@@ -82,7 +82,7 @@
     "@ts-macro/language-plugin": "^0.3.6",
     "@types/node": "^24.10.1",
     "@volar/typescript": "^2.4.23",
-    "@vue/language-core": "^3.1.4",
+    "@vue/language-core": "^3.1.5",
     "bumpp": "^10.3.1",
     "esbuild": "^0.27.0",
     "eslint": "^9.39.1",
