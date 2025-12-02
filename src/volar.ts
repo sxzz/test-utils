@@ -33,9 +33,8 @@ export async function createVueProgram(
   vueCompilerOptions: RawVueCompilerOptions = {},
 ): Promise<Program> {
   const ts = await import('typescript')
-  const { createVueLanguagePlugin, CompilerOptionsResolver } = await import(
-    '@vue/language-core'
-  )
+  const { createVueLanguagePlugin, CompilerOptionsResolver } =
+    await import('@vue/language-core')
   const { proxyCreateProgram } = await import('@volar/typescript')
 
   const host = ts.createCompilerHost(compilerOptions)
