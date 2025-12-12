@@ -1,5 +1,6 @@
 import { outputToSnapshot } from './snapshot'
 import type {
+  InputOption,
   InputOptions,
   OutputOptions,
   RolldownOutput,
@@ -7,7 +8,7 @@ import type {
 } from 'rolldown'
 
 export async function rolldownBuild(
-  file: string | string[],
+  input: InputOption,
   plugins: RolldownPluginOption = [],
   inputOptions: InputOptions = {},
   outputOptions: OutputOptions = {},
@@ -17,7 +18,7 @@ export async function rolldownBuild(
 }> {
   const { rolldown } = await import('rolldown')
   const bundle = await rolldown({
-    input: Array.isArray(file) ? file : [file],
+    input,
     treeshake: false,
     onwarn(warning, defaultHandler) {
       if (
