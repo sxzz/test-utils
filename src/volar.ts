@@ -43,7 +43,7 @@ export async function createVueProgram(
     ts.createProgram,
     (ts, options) => {
       const rootDir = (options.options.$rootDir as string) || process.cwd()
-      const resolver = new CompilerOptionsResolver(ts.sys.fileExists)
+      const resolver = new CompilerOptionsResolver(ts, ts.sys.readFile)
       resolver.addConfig(vueCompilerOptions, rootDir)
       const vueOptions = resolver.build()
 
