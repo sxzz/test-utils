@@ -78,7 +78,7 @@
     "unplugin-utils": "^0.3.1"
   },
   "devDependencies": {
-    "@sxzz/eslint-config": "^7.8.4",
+    "@sxzz/eslint-config": "^8.0.0",
     "@sxzz/prettier-config": "^2.3.1",
     "@ts-macro/language-plugin": "^0.3.7",
     "@types/node": "^25.6.0",
