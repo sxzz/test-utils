@@ -59,10 +59,10 @@ importers:
         version: 0.3.7
       tsdown:
         specifier: ^0.22.0
-        version: 0.22.0(@arethetypeswrong/core@0.18.2)(@typescript/native-preview@7.0.0-dev.20260510.1)(publint@0.3.20)(typescript@6.0.3)(unrun@0.2.37(synckit@0.11.12))
+        version: 0.22.0(@arethetypeswrong/core@0.18.2)(@typescript/native-preview@7.0.0-dev.20260510.1)(publint@0.3.20)(typescript@6.0.3)
       tsdown-preset-sxzz:
         specifier: ^0.6.0
-        version: 0.6.0(tsdown@0.22.0(@arethetypeswrong/core@0.18.2)(@typescript/native-preview@7.0.0-dev.20260510.1)(publint@0.3.20)(typescript@6.0.3)(unrun@0.2.37(synckit@0.11.12)))
+        version: 0.6.0(tsdown@0.22.0(@arethetypeswrong/core@0.18.2)(@typescript/native-preview@7.0.0-dev.20260510.1)(publint@0.3.20)(typescript@6.0.3))
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
@@ -2368,16 +2368,6 @@ packages:
   unplugin-utils@0.3.1:
     resolution: {integrity: sha512-5lWVjgi6vuHhJ526bI4nlCOmkCIF3nnfXkCMDeMJrtdvxTs6ZFCM8oNufGTsDbKv/tJ/xj8RpvXjRuPBZJuJog==}
     engines: {node: '>=20.19.0'}
-
-  unrun@0.2.37:
-    resolution: {integrity: sha512-AA7vDuYsgeSYVzJMm16UKA+aXFKhy7nFqW9z5l7q44K4ppFWZAMqYS58ePRZbugMLPH0fwwMzD5A8nP0avxwZQ==}
-    engines: {node: '>=20.19.0'}
-    hasBin: true
-    peerDependencies:
-      synckit: ^0.11.11
-    peerDependenciesMeta:
-      synckit:
-        optional: true
 
   update-browserslist-db@1.2.3:
     resolution: {integrity: sha512-Js0m9cx+qOgDxo0eMiFGEueWztz+d4+M3rGlmKPT+T4IS/jP4ylw3Nwpu6cpTTP8R1MAC1kF4VbdLt3ARf209w==}
@@ -4759,13 +4749,13 @@ snapshots:
     dependencies:
       muggle-string: 0.4.1
 
-  tsdown-preset-sxzz@0.6.0(tsdown@0.22.0(@arethetypeswrong/core@0.18.2)(@typescript/native-preview@7.0.0-dev.20260510.1)(publint@0.3.20)(typescript@6.0.3)(unrun@0.2.37(synckit@0.11.12))):
+  tsdown-preset-sxzz@0.6.0(tsdown@0.22.0(@arethetypeswrong/core@0.18.2)(@typescript/native-preview@7.0.0-dev.20260510.1)(publint@0.3.20)(typescript@6.0.3)):
     dependencies:
       '@arethetypeswrong/core': 0.18.2
       publint: 0.3.20
-      tsdown: 0.22.0(@arethetypeswrong/core@0.18.2)(@typescript/native-preview@7.0.0-dev.20260510.1)(publint@0.3.20)(typescript@6.0.3)(unrun@0.2.37(synckit@0.11.12))
+      tsdown: 0.22.0(@arethetypeswrong/core@0.18.2)(@typescript/native-preview@7.0.0-dev.20260510.1)(publint@0.3.20)(typescript@6.0.3)
 
-  tsdown@0.22.0(@arethetypeswrong/core@0.18.2)(@typescript/native-preview@7.0.0-dev.20260510.1)(publint@0.3.20)(typescript@6.0.3)(unrun@0.2.37(synckit@0.11.12)):
+  tsdown@0.22.0(@arethetypeswrong/core@0.18.2)(@typescript/native-preview@7.0.0-dev.20260510.1)(publint@0.3.20)(typescript@6.0.3):
     dependencies:
       ansis: 4.2.0
       cac: 7.0.0
@@ -4786,7 +4776,6 @@ snapshots:
       '@arethetypeswrong/core': 0.18.2
       publint: 0.3.20
       typescript: 6.0.3
-      unrun: 0.2.37(synckit@0.11.12)
     transitivePeerDependencies:
       - '@ts-macro/tsc'
       - '@typescript/native-preview'
@@ -4858,13 +4847,6 @@ snapshots:
     dependencies:
       pathe: 2.0.3
       picomatch: 4.0.4
-
-  unrun@0.2.37(synckit@0.11.12):
-    dependencies:
-      rolldown: 1.0.0-rc.17
-    optionalDependencies:
-      synckit: 0.11.12
-    optional: true
 
   update-browserslist-db@1.2.3(browserslist@4.28.2):
     dependencies:
