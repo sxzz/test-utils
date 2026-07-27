@@ -85,7 +85,7 @@
     "@typescript/native-preview": "7.0.0-dev.20260707.2",
     "@volar/typescript": "^2.4.28",
     "@vue/language-core": "^3.2.7",
-    "bumpp": "^11.0.1",
+    "bumpp": "^12.0.0",
     "esbuild": "^0.28.0",
     "eslint": "^10.2.1",
     "prettier": "^3.8.3",
