@@ -54,11 +54,10 @@ export const RollupEscapeNullCharacterPlugin = (): Plugin => {
   return {
     name: 'escape-null-character',
     generateBundle(options, bundle) {
-      for (const filename of Object.keys(bundle)) {
-        const b = bundle[filename]
-        if (b.type !== 'chunk') continue
-        if (b.code.includes('\0')) {
-          b.code = b.code.replaceAll('\0', '[NULL]')
+      for (const chunk of Object.values(bundle)) {
+        if (chunk.type !== 'chunk') continue
+        if (chunk.code.includes('\0')) {
+          chunk.code = chunk.code.replaceAll('\0', '[NULL]')
         }
       }
     },
