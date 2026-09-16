@@ -62,16 +62,14 @@ export async function expectFilesSnapshot(
   const files = (await glob(pattern, { cwd: sourceDir })).toSorted()
   const fileMap = Object.fromEntries(
     await Promise.all(
-      files.map(
-        async (filename): Promise<[string, string]> => [
-          normalizePath(filename),
-          replacePath(
-            await readFile(path.resolve(sourceDir, filename), 'utf8'),
-            cwd,
-            '[CWD]',
-          ),
-        ],
-      ),
+      files.map(async (filename): Promise<[string, string]> => [
+        normalizePath(filename),
+        replacePath(
+          await readFile(path.resolve(sourceDir, filename), 'utf8'),
+          cwd,
+          '[CWD]',
+        ),
+      ]),
     ),
   )
   const snapshot = Object.entries(fileMap)
