@@ -1,5 +1,6 @@
 allowBuilds:
   esbuild: false
+minimumReleaseAge: 0
 minimumReleaseAgeExclude:
   - '@rolldown/binding-android-arm-eabi@1.2.9'
   - '@rolldown/binding-android-arm64@1.2.9'
@@ -18,3 +19,7 @@ minimumReleaseAgeExclude:
   - '@rolldown/binding-win32-x64-msvc@1.2.9'
   - prettier@3.9.7
   - rolldown@1.2.9
+shellEmulator: true
+trustLockfile: true
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 10080 # 7 days
